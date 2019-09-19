@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class EventThumbnailComponent implements OnInit {
 
   @Input() event: any;
+  thumbVar: String = 'Hello';
   constructor() { }
 
   ngOnInit() {

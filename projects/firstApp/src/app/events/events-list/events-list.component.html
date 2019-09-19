@@ -1,5 +1,7 @@
 <div>
     <p>events-list works!</p>
     <hr>
-    <app-event-thumbnail [event]="event1"></app-event-thumbnail>
+    <app-event-thumbnail #thumbObj [event]="event1"></app-event-thumbnail>
+    <!--binds from another component's members-->
+    <h3>{{thumbObj.thumbVar}}</h3>
 </div>
