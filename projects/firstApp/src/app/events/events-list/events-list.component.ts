@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { EventThumbnailComponent } from '../event-thumbnail/event-thumbnail.component';
 
 @Component({
   selector: 'app-events-list',
   templateUrl: './events-list.component.html',
   styleUrls: ['./events-list.component.css']
 })
+
 export class EventsListComponent implements OnInit {
 
   constructor() { }
@@ -12,7 +14,7 @@ export class EventsListComponent implements OnInit {
   ngOnInit() {
   }
 
-  event = {
+  event1 = {
     id: 1,
     name: "Angular Learn",
     date: '3/4/2019',
