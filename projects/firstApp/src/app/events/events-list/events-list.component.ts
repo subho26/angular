@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventThumbnailComponent } from '../event-thumbnail/event-thumbnail.component';
+import { EventServiceService } from '../event-service.service';
 
 @Component({
   selector: 'app-events-list',
@@ -8,22 +8,12 @@ import { EventThumbnailComponent } from '../event-thumbnail/event-thumbnail.comp
 })
 
 export class EventsListComponent implements OnInit {
-
-  constructor() { }
+  events: any[];
+  
+  constructor(private eventService: EventServiceService) {
+  }
 
   ngOnInit() {
+    this.events = this.eventService.getEvents();
   }
-
-  event1 = {
-    id: 1,
-    name: "Angular Learn",
-    date: '3/4/2019',
-    price: 599,
-    imageUrl: '/app/assets/images/angular_logo.png',
-    location: {
-      address: '1057 DT',
-      city: 'London',
-      country: 'England'
-    }
-  }
-}
+} 

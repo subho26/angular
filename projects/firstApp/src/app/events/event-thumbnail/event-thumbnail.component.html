@@ -1,10 +1,14 @@
 <div class="well hoverwell thumbnail">
-        <h2>{{event.name}}</h2>
-        <div>Date: {{event.date}}</div>
-        <div>Price: ${{event.price}}</div>
-        <div>Location:
-            <span>{{event.location.address}}</span>&nbsp;
-            <span>{{event.location.city}}</span>&nbsp;
-            <span>{{event.location.country}}</span>
-        </div>
+    <h2>{{event?.name}}</h2>
+    <div>Date: {{event?.date}}</div>
+    <div>Price: ${{event?.price}}</div>
+    <div *ngIf="event?.location">Location:
+        <span>{{event?.location?.address}}</span>&nbsp;
+        <span>{{event?.location?.city}}</span>&nbsp;
+        <span>{{event?.location?.country}}</span>
     </div>
+    <div *ngIf="event?.onlineUrl">
+    <!-- <div [hidden]="!event?.onlineUrl"> when you want to hide it only -->
+        OnlineUrl: {{event?.onlineUrl}}
+    </div>
+</div>
